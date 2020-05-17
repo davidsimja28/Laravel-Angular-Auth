@@ -11,6 +11,14 @@ import { SignupComponent } from './components/signup/signup.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { RequestResetComponent } from './components/password/request-reset/request-reset.component';
 import { ResponseResetComponent } from './components/password/response-reset/response-reset.component';
+import { JarvisService } from './Services/jarvis.service';
+import { TokenService } from './Services/token.service';
+import { AuthService } from './Services/auth.service';
+import { AfterLoginService } from './Services/after-login.service';
+import { BeforeLoginService } from './Services/before-login.service';
+import { ErrorComponent } from './components/error/error.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+
 
 
 
@@ -24,6 +32,8 @@ import { ResponseResetComponent } from './components/password/response-reset/res
     PerfilComponent,
     RequestResetComponent,
     ResponseResetComponent,
+    ErrorComponent,
+    InicioComponent,
     
 
   ],
@@ -35,7 +45,13 @@ import { ResponseResetComponent } from './components/password/response-reset/res
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [JarvisService,
+              TokenService,
+              AuthService,
+              AfterLoginService,
+              BeforeLoginService
+              ],
+              
   bootstrap: [AppComponent]
 })
 export class AppModule { }

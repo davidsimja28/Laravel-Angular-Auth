@@ -1,8 +1,17 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-light" *ngIf="loggedIn">
   <a class="navbar-brand">Navbar</a>
   <div>
-  <a class="navbar-brand" [routerLink]="['/login']">Iniciar Sesión</a>
-  <a class="navbar-brand" [routerLink]="['/perfil']">Perfil</a>
+  <a class="navbar-brand" [routerLink]="['/login']" *ngIf="!loggedIn">Iniciar Sesión</a>
+
+  <a class="navbar-brand" [routerLink]="['/perfil']" *ngIf="loggedIn">Productos</a>
+
+  <a class="navbar-brand" [routerLink]="['/perfil']" *ngIf="loggedIn">Categorías</a>
+
+  <a class="navbar-brand" [routerLink]="['/perfil']" *ngIf="loggedIn">Distribuidores</a>
+
+  <a class="navbar-brand" [routerLink]="['/perfil']" *ngIf="loggedIn">Ventas</a>
+
+  <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">Cerrar Sesión</a>
   </div>
   
 </nav>

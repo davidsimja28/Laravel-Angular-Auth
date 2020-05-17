@@ -1,5 +1,30 @@
-#img{
-    background-size: 80vw 80vh;
-    background-attachment: fixed;
-    margin: 0;
+#btn
+{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#titulo
+{
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container
+{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+#img
+{
+    width: 1375px;
+    height: 625px;
+    margin-left: -14%;
 }

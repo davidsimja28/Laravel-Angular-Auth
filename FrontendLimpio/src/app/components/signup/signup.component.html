@@ -1,3 +1,78 @@
-<p>
-  signup works!
-</p>
+
+<div class="text-center mt-5" id="titulo" ><h2><strong>Regístrate</strong></h2></div>
+
+<div class="mt-4 col-md-5 offset-4">
+
+      <form #signUpForm=ngForm (ngSubmit)="onSubmit()">
+
+        <div class="col-md-10 mt-4" id="name">
+          <label for="name"><strong>Nombre</strong></label>
+            <input type="text" 
+                   name="name" 
+                   class="form-control" 
+                   id="inputName3"
+                   placeholder="Nombre"
+                   [(ngModel)]="form.name"
+                   required>  
+        </div>
+        <div class="alert alert-danger col-md-8" [hidden]="!error.name" id="error">
+          {{error.name}}
+        </div>
+
+
+
+        <div class="col-md-10 mt-4" id="email">
+          <label for="email"><strong>Correo</strong></label>
+            <input type="email" 
+                   name="email" 
+                   class="form-control" 
+                   id="inputEmail3"
+                   placeholder="Correo electrónico"
+                   [(ngModel)]="form.email"
+                   required>
+        </div>
+        <div class="alert alert-danger col-md-9" [hidden]="!error.email" id="error">
+          {{error.email}}
+        </div>
+
+        <div class="col-md-10 mt-4" id="password">
+          <label for="inputPassword3"><strong>Contraseña</strong></label>
+            <input type="password" 
+                   name="password" 
+                   class="form-control" 
+                   id="inputPassword3"
+                   placeholder="Contraseña"
+                   [(ngModel)]="form.password"
+                   required>
+        </div>
+
+        <div class="col-md-10 mt-4" id="password_confirmation">
+          <label for="password_confirmation"><strong>Confirmar contraseña</strong></label>
+            <input type="password" 
+                   name="password_confirmation" 
+                   class="form-control" 
+                   id="password_confirmation"
+                   placeholder="Confirmar contraseña"
+                   [(ngModel)]="form.password_confirmation"
+                   required>
+        </div>
+        <div class="alert alert-danger col-md-9" [hidden]="!error.password" id="error">
+          {{error.password}}
+        </div>
+
+        <div class="row" id="btn">
+          <div class="col-md-9 mt-3">
+            <button type="submit" 
+                    class="btn btn-primary btn-block" 
+                    [disabled]="!signUpForm.valid"
+                    >Registrar</button>
+          </div>
+        </div>
+
+        <div class="row" id="btnc">
+          <div class="col-md-9 mt-3">
+            <button class="btn btn-danger btn-block" [routerLink]="['/login']">Cancelar</button>
+          </div>
+        </div>
+      </form>
+</div>

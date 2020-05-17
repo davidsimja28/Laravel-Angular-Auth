@@ -1,3 +1,62 @@
-<p>
-  login works!
-</p>
+<br>
+<br>
+<br>
+<!-- <div class="alert alert-danger col-md-4" [hidden]="!error" id="error">
+  {{error}}
+</div> -->
+<div class="container">
+  <img src="assets/img/8.jpg" id="img" >
+
+<div class="text-center" id="titulo" ><h1><strong>Iniciar Sesión</strong></h1></div>
+
+<div class="validation-summary-errors" [hidden]="!error" id="error">
+  <ul>
+    <li><strong>{{error}}</strong></li>
+  </ul>
+</div>
+
+<div class="mt-4 col-md-5 offset-4" id="login">
+
+      <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+
+        <div class="col-md-10 mt-4" id="email">
+          <label for="email"><strong>Correo</strong></label>
+            <input type="email" 
+                   name="email" 
+                   class="form-control" 
+                   id="inputEmail3"
+                   placeholder="Correo electrónico"
+                   [(ngModel)]="form.email"
+                   required>
+        </div>
+
+        <div class="col-md-10 mt-4" id="password">
+          <label for="inputPassword3"><strong>Contraseña</strong></label>
+            <input type="password" 
+                   name="password" 
+                   class="form-control" 
+                   id="inputPassword3"
+                   placeholder="Contraseña"
+                   [(ngModel)]="form.password"
+                   required>
+        </div>
+
+        <div class="form-group row" id="btn">
+          <div class="col-sm-9 mt-3">
+            <button type="submit" 
+                    class="btn btn-primary btn-block" 
+                    [disabled]="!loginForm.valid">
+                    Ingresar
+            </button>
+          </div>
+          <div class="text-center" id="link">
+            <a [routerLink]="['/signup']" class="btn text-info"><h6>Eres nuevo? Crea una cuenta aquí</h6></a>
+          </div>
+          <small id="reset">
+            <a [routerLink]="['/request']">Olvidé mi contraseña</a>  
+          </small>
+        </div>
+
+      </form>
+</div>
+</div>

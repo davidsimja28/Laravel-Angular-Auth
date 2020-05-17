@@ -7,24 +7,36 @@ import { SignupComponent } from './components/signup/signup.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { RequestResetComponent } from './components/password/request-reset/request-reset.component';
 import { ResponseResetComponent } from './components/password/response-reset/response-reset.component';
+import { BeforeLoginService } from './Services/before-login.service';
+import { AfterLoginService } from './Services/after-login.service';
+import { ErrorComponent } from './components/error/error.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 
 
 
 const APP_ROUTES: Routes = [
 
-    {path: 'home', component: HomeComponent},  
-    {path: '', component: HomeComponent, pathMatch: 'full' },
-    {path: '**', pathMatch: 'full' , redirectTo: 'menu' },
-    {path: 'navbar', component: NavbarComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'signup', component: SignupComponent},
-    {path: 'perfil', component: PerfilComponent},
-    {path: 'request', component: RequestResetComponent},
-    {path: 'response', component: ResponseResetComponent},
-
-
     
+    { path: '', component: HomeComponent, canActivate: [BeforeLoginService] },
+
+    { path: 'home', component: HomeComponent,canActivate: [BeforeLoginService] },
+
+    { path: 'navbar', component: NavbarComponent, canActivate: [AfterLoginService] },
+
+    { path: 'login', component: LoginComponent, canActivate: [BeforeLoginService]  },
+
+    { path: 'signup', component: SignupComponent, canActivate: [BeforeLoginService] },
+
+    { path: 'perfil', component: PerfilComponent, canActivate: [AfterLoginService] },
+
+    { path: 'inicio', component: InicioComponent, canActivate: [AfterLoginService] },
+
+    { path: 'request', component: RequestResetComponent,canActivate: [BeforeLoginService] },
+
+    { path: 'response', component: ResponseResetComponent, canActivate: [AfterLoginService] },
+
+    { path: '**', component: ErrorComponent },
 
 
     
