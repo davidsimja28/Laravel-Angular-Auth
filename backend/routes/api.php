@@ -13,6 +13,7 @@ Route::group([
     Route::post('signup', 'AuthController@signup');
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
+    Route::post('sendPasswordResetLink', 'ResetPasswordController@sendEmail');
     Route::post('me', 'AuthController@me');
 
     Route::post('categoria', 'CategoriaController@create');
