@@ -34,7 +34,7 @@ const APP_ROUTES: Routes = [
 
     { path: 'request', component: RequestResetComponent,canActivate: [BeforeLoginService] },
 
-    { path: 'response', component: ResponseResetComponent, canActivate: [AfterLoginService] },
+    { path: 'response', component: ResponseResetComponent, canActivate: [BeforeLoginService] },
 
     { path: '**', component: ErrorComponent },
 

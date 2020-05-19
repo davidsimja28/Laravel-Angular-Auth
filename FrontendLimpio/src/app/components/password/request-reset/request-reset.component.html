@@ -1,3 +1,32 @@
-<p>
-  request-reset works!
-</p>
+<br>
+<br>
+<br>
+
+<div class="text-center" id="titulo" ><h1><strong>Restablecer contraseña</strong></h1></div>
+
+<div class="mt-4 col-md-5 offset-4" id="login">
+
+      <form #requestForm=ngForm (ngSubmit)="onSubmit()">
+
+        <div class="col-md-10 mt-4" id="email">
+          <label for="email"><strong>Correo</strong></label>
+            <input type="email" 
+                   name="email" 
+                   class="form-control" 
+                   id="inputEmail3"
+                   placeholder="Correo electrónico"
+                   [(ngModel)]="form.email"
+                   required>
+        </div>
+        <div class="form-group row" id="btn">
+          <div class="col-sm-9 mt-3">
+            <button type="submit" 
+                    class="btn btn-primary btn-block" 
+                    [disabled]="!requestForm.valid">
+                    Enviar
+            </button>
+          </div>
+        </div>
+
+      </form>
+</div>

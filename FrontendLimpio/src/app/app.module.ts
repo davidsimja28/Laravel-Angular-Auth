@@ -18,6 +18,7 @@ import { AfterLoginService } from './Services/after-login.service';
 import { BeforeLoginService } from './Services/before-login.service';
 import { ErrorComponent } from './components/error/error.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 
 
 
@@ -44,12 +45,15 @@ import { InicioComponent } from './components/inicio/inicio.component';
     APP_ROUTING,
     FormsModule,
     HttpClientModule,
+    SnotifyModule,
   ],
   providers: [JarvisService,
               TokenService,
               AuthService,
               AfterLoginService,
-              BeforeLoginService
+              BeforeLoginService,
+              { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
+              SnotifyService
               ],
               
   bootstrap: [AppComponent]

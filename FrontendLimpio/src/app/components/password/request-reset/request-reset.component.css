@@ -1,0 +1,54 @@
+#email
+{
+    margin-left: -3%;
+}
+
+#password
+{
+    margin-left: -3%;
+}
+
+#btn
+{
+    margin-left: 1%;
+}
+
+#error
+{
+    position: absolute;
+    top: 36%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    color: rgb(209, 12, 12);
+}
+
+#img
+{
+    width: 690px;
+    height: 665px;
+    margin-left: -14%;
+    margin-top: -10%;
+}
+
+#login
+{
+    position: absolute;
+    top: 45%;
+    left: 21%;
+    transform: translate(-50%, -50%);
+}
+
+#titulo
+{
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+
